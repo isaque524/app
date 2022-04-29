@@ -1,6 +1,6 @@
 "use strict";
 
-import CtrlManterProdutos from "./CtrlManterProdutos.js";
+import CtrlManterProdutos from "/CtrlManterProdutos.js";
 
 export default class CtrlSessao {
   
@@ -34,3 +34,4 @@ if ('serviceWorker' in navigator) {
 
 
 //------------------------------------------------------------------------//
+

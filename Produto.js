@@ -24,16 +24,16 @@ export default class Produto {
   
   //-----------------------------------------------------------------------------------------//
 
-  getcormercial() {
+  getcomercial() {
     return this.#comercial;
   }
   
   //-----------------------------------------------------------------------------------------//
 
   setcomercial(comercial) {
-    if(!Produto.validarcomecial(comercial))
+    if(!Produto.validarcomercial(comercial))
       throw new ModelError("Nome Comercial Inválido: " + comercial);
-    this.#comercial = cormercial;
+    this.#comercial = comercial;
   }
   
   //-----------------------------------------------------------------------------------------//
