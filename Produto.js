@@ -118,7 +118,7 @@ export default class Produto {
 
   //-----------------------------------------------------------------------------------------//
 
-  static validarcomecial(comercial) {
+  static validarcomercial(comercial) {
     if(comercial == null || comercial == "" || comercial == undefined)
       return false;
       if (comercial.length > 40) 
