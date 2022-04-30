@@ -121,25 +121,24 @@ export default class Produto {
   static validarcomercial(comercial) {
     if(comercial == null || comercial == "" || comercial == undefined)
       return false;
-    if (comercial.length > 40) 
-      return false;
-    const padraoNome = /[A-Z][a-z] */;
+    
+    const padraoNome = /[A-Za-z]{1,40}/;
     if (!padraoNome.test(comercial)) 
       return false;
+    
     return true;
   }
 
   //-----------------------------------------------------------------------------------------//
 
   static validarcientifico(cientifico) {
-    console.log(cientifico);
     if(cientifico == null || cientifico == "" || cientifico == undefined)
       return false;
-    if (cientifico.length > 40) 
-      return false;
-    const padraocientifico = /[A-Z][a-z] */;
+    
+    const padraocientifico = /[A-Za-z]{1,40}/;
     if (!padraocientifico.test(cientifico)) 
       return false;
+    
     return true;
 
   }
@@ -149,11 +148,11 @@ export default class Produto {
   static validarlaboratorio(laboratorio) {
     if(laboratorio == null || laboratorio == "" || laboratorio == undefined)
       return false;
-    if (laboratorio.length > 40) 
-      return false;
-    const padraolaboratorio = /[A-Z][a-z] */;
+    
+    const padraolaboratorio = /[A-Za-z]{1,40}/;
     if (!padraolaboratorio.test(laboratorio)) 
       return false;
+    
     return true;
   }
 
@@ -162,6 +161,8 @@ export default class Produto {
   static validarquantidade(quantidade) {
     if(quantidade == null || quantidade == "" || quantidade == undefined)
       return false;
+    
+    return true
   }
 
   //-----------------------------------------------------------------------------------------//
@@ -169,6 +170,8 @@ export default class Produto {
   static validarseletor(seletor) {
     if(seletor== null || seletor == "" || seletor == undefined)
       return false;
+    
+    return true
   }
 
   //-----------------------------------------------------------------------------------------//
