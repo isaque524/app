@@ -25,14 +25,12 @@ export default class Produto {
   //-----------------------------------------------------------------------------------------//
 
   getcomercial() {
-    console.log("get Comercial");
     return this.#comercial;
   }
   
   //-----------------------------------------------------------------------------------------//
 
   setcomercial(comercial) {
-    console.log("set Comercial");
     if(!Produto.validarcomercial(comercial))
       throw new ModelError("Nome Comercial Inválido: " + comercial);
     this.#comercial = comercial;
@@ -83,14 +81,12 @@ export default class Produto {
   //-----------------------------------------------------------------------------------------//
 
   getseletor() {
-    console.log("get" + seletor);
     return this.#seletor;
   }
   
   //-----------------------------------------------------------------------------------------//
 
   setseletor(seletor) {
-    console.log("set" + seletor);
     if(!Produto.validarseletor(seletor))
       throw new ModelError("seletor inválido: " + seletor);
     this.#seletor = seletor;
@@ -123,7 +119,6 @@ export default class Produto {
   //-----------------------------------------------------------------------------------------//
 
   static validarcomercial(comercial) {
-    console.log("set Comercial");
     if(comercial == null || comercial == "" || comercial == undefined)
       return false;
     
@@ -173,7 +168,6 @@ export default class Produto {
   //-----------------------------------------------------------------------------------------//
 
   static validarseletor(seletor) {
-    console.log("validar" + seletor);
     if(seletor== null || seletor == "" || seletor == undefined)
       return false;
     
@@ -184,7 +178,7 @@ export default class Produto {
    
   mostrar() {
     let texto = "comercial: " + this.#comercial + "\n";
-    texto += "cientifico: " + this.#cientifico + "\n";
+    texto += "cientifico: "   + this.#cientifico + "\n";
       
     alert(texto);
     alert(JSON.stringify(this));
