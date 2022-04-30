@@ -28,7 +28,7 @@ export default class DaoProduto {
           let store = db.createObjectStore("ProdutoST", {
             autoIncrement: true,
           });
-          store.createIndex("idxcomercial", "comercial", { unique: true });
+          store.createIndex("idxComercial", "comercial", { unique: true });
         };
 
         requestDB.onerror = (event) => {
@@ -57,7 +57,7 @@ export default class DaoProduto {
       try {
         transacao = connection.transaction(["ProdutoST"], "readonly");
         store = transacao.objectStore("ProdutoST");
-        indice = store.index("idxcomercial");
+        indice = store.index("idxComercial");
       } catch (e) {
         reject(new ModelError("Erro: " + e));
       }
@@ -164,7 +164,7 @@ export default class DaoProduto {
     let connection = await this.obterConexao();
     let resultado = new Promise(function (resolve, reject) {
       let transacao = connection.transaction(["ProdutoST"], "readwrite");
-      transacao.onerror = (event) => {
+      transacao.onerror = event => {
         reject(
           new ModelError(
             "Não foi possível alterar o produto",
@@ -175,11 +175,11 @@ export default class DaoProduto {
       let store = transacao.objectStore("ProdutoST");
       let indice = store.index("idxComercial");
       var keyValue = IDBKeyRange.only(produto.getcomercial());
-      indice.openCursor(keyValue).onsuccess = (event) => {
+      indice.openCursor(keyValue).onsuccess = event => {
         const cursor = event.target.result;
         if (cursor) {
           if (cursor.value.comercial == produto.getcomercial()) {
-            const request = cursor.update(produto.deassign(produto));
+            const request = cursor.update(Produto.deassign(produto));
             request.onsuccess = () => {
               console.log("[DaoProduto.alterar] Cursor update - Sucesso ");
               resolve("Ok");
