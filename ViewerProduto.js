@@ -201,7 +201,6 @@ function fnBtExcluir() {
   // no botão para poder executar a instrução abaixo.
   this.viewer.getCtrl().iniciarExcluir();
 }
-}
 
 //------------------------------------------------------------------------//
 
