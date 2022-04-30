@@ -28,22 +28,23 @@ export default class ViewerProduto {
     this.btOk        = this.obterElemento('btOk');
     this.btCancelar  = this.obterElemento('btCancelar');
 
-    this.comercial = this.obterElemento('comercial');
-    this.cientifico      = this.obterElemento('cientifico');
-    this.laboratorio     = this.obterElemento('laboratorio');
-    this.quantidade     = this.obterElemento('quantidade');
-    this.seletor  = this.obterElemento('seletor');
+    this.comercial   = this.obterElemento('comercial');
+    this.cientifico  = this.obterElemento('cientifico');
+    this.laboratorio = this.obterElemento('laboratorio');
+    this.quantidade  = this.obterElemento('quantidade');
+    this.seletor     = this.obterElemento('seletor');
       
     this.btPrimeiro.onclick = fnBtPrimeiro; 
-    this.btProximo.onclick = fnBtProximo; 
+    this.btProximo.onclick  = fnBtProximo; 
     this.btAnterior.onclick = fnBtAnterior; 
-    this.btUltimo.onclick = fnBtUltimo; 
+    this.btUltimo.onclick   = fnBtUltimo; 
 
-    this.btIncluir.onclick = fnBtIncluir; 
-    this.btAlterar.onclick = fnBtAlterar; 
-    this.btExcluir.onclick = fnBtExcluir; 
+    this.btIncluir.onclick  = fnBtIncluir; 
+    this.btAlterar.onclick  = fnBtAlterar; 
+    this.btExcluir.onclick  = fnBtExcluir;  
+    this.btSair.onclick     = fnBtSair; 
 
-    this.btOk.onclick = fnBtOk; 
+    this.btOk.onclick       = fnBtOk; 
     this.btCancelar.onclick = fnBtCancelar; 
   }
 
@@ -199,6 +200,13 @@ function fnBtExcluir() {
   // Aqui, o 'this' é o objeto Button. Eu adicionei o atributo 'viewer'
   // no botão para poder executar a instrução abaixo.
   this.viewer.getCtrl().iniciarExcluir();
+}
+}
+
+//------------------------------------------------------------------------//
+
+function fnBtSair() {
+  window.close();
 }
 
 //------------------------------------------------------------------------//
