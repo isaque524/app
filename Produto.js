@@ -46,7 +46,7 @@ export default class Produto {
 
   setcientifico(cientifico) {
     if(!Produto.validarcientifico(cientifico))
-      throw new ModelError("Nome Cientifico Inválido: " + laboratorio);
+      throw new ModelError("Nome Cientifico Inválido: " + cientifico);
     this.#cientifico = cientifico;
   }
   
@@ -60,7 +60,7 @@ export default class Produto {
 
   setlaboratorio(laboratorio) {
     if(!Produto.validarlaboratorio(laboratorio))
-      throw new ModelError("Laboratorio Inválido: " + nome);
+      throw new ModelError("Laboratorio Inválido: " + laboratorio);
     this.#laboratorio = laboratorio;
   }
   
@@ -121,7 +121,7 @@ export default class Produto {
   static validarcomercial(comercial) {
     if(comercial == null || comercial == "" || comercial == undefined)
       return false;
-      if (comercial.length > 40) 
+    if (comercial.length > 40) 
       return false;
     const padraoNome = /[A-Z][a-z] */;
     if (!padraoNome.test(comercial)) 
@@ -132,14 +132,15 @@ export default class Produto {
   //-----------------------------------------------------------------------------------------//
 
   static validarcientifico(cientifico) {
+    console.log(cientifico);
     if(cientifico == null || cientifico == "" || cientifico == undefined)
-    return false;
-  if (cientifico.length > 40) 
-    return false;
-  const padraocientifico = /[A-Z][a-z] */;
-  if (!padraocientifico.test(cientifico)) 
-    return false;
-  return true;
+      return false;
+    if (cientifico.length > 40) 
+      return false;
+    const padraocientifico = /[A-Z][a-z] */;
+    if (!padraocientifico.test(cientifico)) 
+      return false;
+    return true;
 
   }
 
