@@ -72,18 +72,18 @@ export default class ViewerProduto {
     this.configurarNavegacao( pos <= 1 , pos == qtde );   
 
     if(produto == null) {
-      this.comercial.value = "";
-      this.cientifico.value       = "";
-      this.laboratorio.value      = "";
-      this.quantidade.value     = "";
-      this.seletor.value  = "";
+      this.comercial.value    = "";
+      this.cientifico.value   = "";
+      this.laboratorio.value  = "";
+      this.quantidade.value   = "";
+      this.seletor.value      = "";
       this.divAviso.innerHTML = " Pedidos de Remedios: 0";
     } else {
-      this.comercial.value = produto.getcomercial();
-      this.cientifico.value       = produto.getcientifico();
-      this.laboratorio.value      = produto.getlaboratorio();
-      this.quantidade.value     = produto.getquantidade();
-      this.seletor.value  = produto.getseletor();
+      this.comercial.value    = produto.getcomercial();
+      this.cientifico.value   = produto.getcientifico();
+      this.laboratorio.value  = produto.getlaboratorio();
+      this.quantidade.value   = produto.getquantidade();
+      this.seletor.value      = produto.getseletor();
       this.divAviso.innerHTML = "Posição: " + pos + " | pedidos de Remedios: " + qtde;
     }
   }

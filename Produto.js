@@ -66,7 +66,7 @@ export default class Produto {
   
   //-----------------------------------------------------------------------------------------//
 
-  getquanidade() {
+  getquantidade() {
     return this.#quantidade;
   }
   
