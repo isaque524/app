@@ -88,7 +88,7 @@ export default class DaoProduto {
       try {
         transacao = connection.transaction(["ProdutoST"], "readonly");
         store = transacao.objectStore("ProdutoST");
-        indice = store.index("idxcomercial");
+        indice = store.index("idxComercial");
       } catch (e) {
         reject(new ModelError("Erro: " + e));
       }
@@ -203,7 +203,7 @@ export default class DaoProduto {
 
   //-----------------------------------------------------------------------------------------//
 
-  async excluir(produto) {
+ async excluir(produto) {
     let connection = await this.obterConexao();
     let transacao = await new Promise(function (resolve, reject) {
       let transacao = connection.transaction(["ProdutoST"], "readwrite");
@@ -218,7 +218,7 @@ export default class DaoProduto {
       let store = transacao.objectStore("ProdutoST");
       let indice = store.index("idxComercial");
       var keyValue = IDBKeyRange.only(produto.getcomercial());
-      indice.openCursor(keyValue).onsuccess = (event) => {
+      indice.openCursor(keyValue).onsuccess = event => {
         const cursor = event.target.result;
         if (cursor) {
           if (cursor.value.comercial == produto.getcomercial()) {
